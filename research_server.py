@@ -7,7 +7,7 @@ from mcp.server.fastmcp import FastMCP
 PAPER_DIR = "papers"
 
 # Initialize FastMCP server
-mcp = FastMCP("research", port=8001)
+mcp = FastMCP("research", port=os.getenv("PORT", 8001))
 
 
 @mcp.tool()
