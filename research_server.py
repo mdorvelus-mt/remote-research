@@ -5,9 +5,11 @@ from typing import List
 from mcp.server.fastmcp import FastMCP
 
 PAPER_DIR = "papers"
-
+ARGS = {}
+if os.getenv("HOST"):
+    ARGS["host"] = os.getenv("HOST")
 # Initialize FastMCP server
-mcp = FastMCP("research", port=os.getenv("PORT", 8001))
+mcp = FastMCP("research", port=os.getenv("PORT", 8001), **ARGS)
 
 
 @mcp.tool()
